@@ -1,0 +1,14 @@
+SHELL = /bin/bash
+MODULE_NAME = $(shell basename $(PWD))
+
+.PHONY: e2e forecast
+e2e forecast &:
+	@uv run --no-dev python -m $(MODULE_NAME) $(@)
+
+.PHONY: lint
+lint:
+	@uv run --dev pre-commit run --all-files
+
+.PHONY: clean
+clean:
+	@git clean -fdfx

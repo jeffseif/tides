@@ -1,0 +1,15 @@
+[project]
+name = "tides"
+version = "0.0.1"
+requires-python = ">=3.14"
+dependencies = [
+    "numpy>=2.4.2",
+    "requests>=2.32.5",
+]
+
+[dependency-groups]
+dev = ["pre-commit"]
+
+[build-system]
+requires = ["hatchling", "setuptools"]
+build-backed = "hatchling.build"
